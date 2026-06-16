@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ruby Sun · 90-Day IP & Social Media Plan</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif;
+  background: #EBEBEB; color: #1A1A1A; line-height: 1.6;
+}
+
+/* ── Header ── */
+.header { padding: 40px 40px 32px; border-bottom: 1px solid #D0D0D0; background: #F5F5F5; }
+.header .eyebrow { font-size: 0.68rem; font-weight: 700; letter-spacing: 2px; color: #C04535; margin-bottom: 10px; }
+.header h1 { font-size: 1.9rem; font-weight: 700; color: #111111; margin-bottom: 6px; }
+.header p { color: #888; font-size: 0.85rem; }
+
+/* ── Tabs ── */
+.tabs { display: flex; background: #F5F5F5; border-bottom: 2px solid #D0D0D0; overflow-x: auto; }
+.tab {
+  flex: 1; min-width: 120px; padding: 14px 16px; text-align: center;
+  font-size: 0.78rem; font-weight: 600; cursor: pointer; color: #888;
+  border-bottom: 3px solid transparent; transition: all 0.2s; white-space: nowrap;
+}
+.tab.active { color: #C04535; border-bottom-color: #C04535; }
+.tab:hover { color: #333; }
+
+/* ── Content area ── */
+.tab-content { display: none; max-width: 960px; margin: 0 auto; padding: 32px 24px; }
+.tab-content.active { display: block; }
+
+/* ── Cards & grids ── */
+.card {
+  background: #FFFFFF; border: 1px solid #D8D8D8;
+  border-radius: 10px; padding: 22px; margin-bottom: 16px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+.card h2 { font-size: 1rem; font-weight: 700; color: #111111; margin-bottom: 4px; }
+.card .sub { font-size: 0.78rem; color: #888; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid #E8E8E8; }
+
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.four-col { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+
+/* ── Mini cards ── */
+.mini { background: #F5F5F5; border: 1px solid #E0E0E0; border-radius: 8px; padding: 14px; }
+.mini .label { font-size: 0.62rem; font-weight: 700; color: #C04535; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 6px; }
+.mini h3 { font-size: 0.85rem; font-weight: 700; color: #111; margin-bottom: 6px; }
+.mini p { font-size: 0.75rem; color: #666; }
+
+/* ── North star block ── */
+.north-star {
+  border-left: 4px solid #C04535; background: #FFFFFF;
+  border-radius: 0 10px 10px 0; padding: 18px 22px; margin-bottom: 20px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+.north-star p { font-size: 0.95rem; color: #1A1A1A; font-style: italic; }
+.north-star .attr { font-size: 0.72rem; color: #C04535; font-weight: 700; margin-top: 8px; }
+
+/* ── Table ── */
+table { width: 100%; border-collapse: collapse; font-size: 0.78rem; }
+th { text-align: left; padding: 9px 12px; background: #F0F0F0; color: #666; font-weight: 600; border-bottom: 1px solid #D8D8D8; }
+td { padding: 9px 12px; border-bottom: 1px solid #EEEEEE; color: #444; }
+tr:last-child td { border-bottom: none; }
+
+/* ── Platform card ── */
+.platform { background: #FFFFFF; border: 1px solid #D8D8D8; border-radius: 10px; padding: 18px; margin-bottom: 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
+.platform-head { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.p-icon { width: 32px; height: 32px; border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+.platform h3 { font-size: 0.88rem; font-weight: 700; color: #111; }
+.platform .lang { font-size: 0.68rem; color: #888; background: #EEEEEE; padding: 2px 8px; border-radius: 20px; }
+.platform ul { list-style: none; }
+.platform ul li { font-size: 0.76rem; color: #555; padding: 5px 0; border-bottom: 1px solid #F0F0F0; display: flex; gap: 8px; }
+.platform ul li:last-child { border-bottom: none; }
+.platform ul li::before { content: "→"; color: #C04535; flex-shrink: 0; }
+
+/* ── Highlight box ── */
+.highlight { background: #FFF5E5; border: 1px solid #E8C080; border-radius: 7px; padding: 10px 14px; font-size: 0.74rem; color: #8B5E20; margin-top: 10px; }
+
+/* ── Badge ── */
+.badge { display: inline-block; font-size: 0.62rem; padding: 2px 8px; border-radius: 20px; font-weight: 600; }
+.badge-red { background: #FDECEA; color: #C04535; }
+.badge-blue { background: #E5EEFF; color: #2A5CB8; }
+
+/* ── Metric ── */
+.metric { text-align: center; padding: 16px; background: #FFFFFF; border: 1px solid #D8D8D8; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+.metric .val { font-size: 1.5rem; font-weight: 700; color: #C04535; }
+.metric .lbl { font-size: 0.7rem; color: #888; margin-top: 4px; }
+
+/* ── Phase badge ── */
+.phase-badge {
+  display: inline-block; background: #C04535; color: #fff;
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 1px;
+  padding: 4px 12px; border-radius: 20px; margin-bottom: 14px;
+}
+
+/* ── Section label ── */
+.slabel {
+  font-size: 0.65rem; font-weight: 700; color: #C04535;
+  letter-spacing: 2px; text-transform: uppercase;
+  border-bottom: 1px solid #D8D8D8; padding-bottom: 8px; margin-bottom: 14px;
+}
+
+/* ── Topic card ── */
+.topic { background: #FFFFFF; border: 1px solid #D8D8D8; border-radius: 8px; padding: 14px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+.topic .icon { font-size: 1.1rem; margin-bottom: 6px; }
+.topic h4 { font-size: 0.82rem; font-weight: 700; color: #111; margin-bottom: 4px; }
+.topic p { font-size: 0.73rem; color: #666; }
+.topic .ex { font-size: 0.69rem; color: #C04535; margin-top: 8px; padding-top: 8px; border-top: 1px solid #EEEEEE; font-style: italic; }
+
+/* ── Footer ── */
+.footer { border-top: 1px solid #D0D0D0; padding: 18px 40px; display: flex; justify-content: space-between; align-items: center; margin-top: 40px; background: #F5F5F5; }
+.footer .brand { font-size: 0.75rem; color: #999; }
+.footer .contact { font-size: 0.75rem; color: #C04535; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="eyebrow">Personal IP & Social Media Strategy · 2025–2026</div>
+  <h1>Ruby Sun · 90-Day Plan</h1>
+  <p>Two tracks, six platforms · DrRuby.ai founder IP + product marketing · V2</p>
+</div>
+
+<div class="tabs">
+  <div class="tab active" onclick="show('overview', this)">Strategy Overview</div>
+  <div class="tab" onclick="show('pillars', this)">Content Pillars</div>
+  <div class="tab" onclick="show('phase1', this)">Month 1 · August</div>
+  <div class="tab" onclick="show('phase2', this)">Month 2 · September</div>
+  <div class="tab" onclick="show('phase3', this)">Month 3 · October</div>
+  <div class="tab" onclick="show('topics', this)">Topic Bank</div>
+  <div class="tab" onclick="show('media', this)">Media Articles</div>
+  <div class="tab" onclick="show('metrics', this)">Metrics</div>
+</div>
+
+<!-- ═══ OVERVIEW ═══ -->
+<div class="tab-content active" id="overview">
+
+  <div class="north-star">
+    <p>DrRuby is built on five beliefs:<br><br>
+    The health industry manufactures anxiety. We're building the antidote.<br>
+    Your response to a drug or supplement is yours alone — not an average, not a guideline, not someone else's result.<br>
+    Your data belongs to you. It lives on your device, tracked longitudinally over time — never sold, never shared.<br>
+    Science and AI should feel human. We turn cold data into coaching that actually speaks to you.<br>
+    The goal is not more information. It's helping you see — clearly, calmly — how you are changing.</p>
+    <div class="attr">IP CORE NARRATIVE · Ruby HealthSpan Lab · YouTube @rubyhealthspanlab</div>
+  </div>
+
+  <div class="card">
+    <h2>Two Tracks, Six Platforms</h2>
+    <div class="sub">Personal IP builds trust with investors, partners, and high-value users. Product track drives DrRuby.ai waitlist and brand awareness.</div>
+    <table>
+      <thead><tr><th>Track</th><th>Platform</th><th>Language</th><th>Primary Goal</th><th>Frequency</th></tr></thead>
+      <tbody>
+        <tr><td><span class="badge badge-red">Ruby IP</span></td><td>LinkedIn</td><td>English</td><td>Investors, advisors, professional credibility</td><td>3x / week</td></tr>
+        <tr><td><span class="badge badge-red">Ruby IP</span></td><td>Ruby HealthSpan Lab · YouTube<br><span style="font-size:0.65rem;color:#555">@rubyhealthspanlab</span></td><td>English</td><td>Scientist &amp; doctor video interviews on women's health, skin biology, longevity — science without the hype</td><td>Bi-weekly</td></tr>
+        <tr><td><span class="badge badge-red">Ruby IP</span></td><td>Morning Silicon Valley · Clubhouse</td><td>English</td><td>Live audio conversations with tech/health community; repurposed as clips and show notes</td><td>Weekly</td></tr>
+        <tr><td><span class="badge badge-red">Ruby IP</span></td><td>X / Twitter</td><td>English</td><td>Science network, real-time opinions, industry engagement</td><td>5x / week</td></tr>
+        <tr><td><span class="badge badge-red">Ruby IP</span></td><td>WeChat Video / Xiaohongshu</td><td>Mandarin</td><td>Chinese community, overseas Chinese women entrepreneurs</td><td>2–3x / week</td></tr>
+        <tr><td><span class="badge badge-blue">DrRuby</span></td><td>TikTok / Douyin</td><td>EN + CN</td><td>Younger skin audience, waitlist CTA, product awareness</td><td>3–4x / week</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>Three-Phase Structure</h2>
+    <div class="sub">Build before selling. Establish presence and voice before pushing product.</div>
+    <div class="four-col">
+      <div class="metric"><div class="val">August</div><div class="lbl">Month 1 · Launch &amp; Credibility<br>Define voice, establish platforms, publish flag content</div></div>
+      <div class="metric"><div class="val">September</div><div class="lbl">Month 2 · Science &amp; Solution<br>Build rhythm, deepen narrative, product launch</div></div>
+      <div class="metric"><div class="val">October</div><div class="lbl">Month 3 · People &amp; Movement<br>Ruby's story, women's healthspan, community</div></div>
+      <div class="metric"><div class="val">Nov+</div><div class="lbl">Scale<br>Sustained media coverage, early member growth</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Distribution Strategy · 3-Stage Narrative Arc</h2>
+    <div class="sub">Nobody knows DrRuby yet. Use the strongest asset to get attention — then transfer ownership to Ruby.</div>
+    <div class="three-col">
+      <div class="mini">
+        <div class="label">Stage 1 · 2026 · Borrow</div>
+        <h3>Lead with Brenner</h3>
+        <p>Use Brenner's scientific authority to earn media attention and investor credibility. Headlines can feature his name. Ruby is always the interviewer — never absent from the frame.</p>
+      </div>
+      <div class="mini">
+        <div class="label">Stage 2 · 2027 · Transition</div>
+        <h3>Ruby takes center stage</h3>
+        <p>Shift headline framing to Ruby's story and DrRuby's mission. Brenner becomes one of several expert voices. Women's health narrative moves to the front.</p>
+      </div>
+      <div class="mini">
+        <div class="label">Stage 3 · 2028 · Own</div>
+        <h3>DrRuby is the news</h3>
+        <p>Product growth, user stories, and Ruby's founder brand carry all distribution. Experts reinforce; they no longer lead. Brand equity fully owned by DrRuby.</p>
+      </div>
+    </div>
+    <div class="highlight">⚠️ Risk to avoid: "DrRuby = Brenner Fan Club." The structure is always: <strong>Ruby asks. Brenner answers.</strong> Ruby holds the mic in every format, every platform, every clip.</div>
+  </div>
+
+  <div class="card">
+    <h2>Content Ratio · 90-Day Target</h2>
+    <div class="sub">By volume across all platforms and formats.</div>
+    <div class="three-col">
+      <div class="mini">
+        <div class="label">70% · Ruby-led</div>
+        <h3>Ruby's voice</h3>
+        <p>Founder story · Menopause & Sjögren's · Building DrRuby · Health anxiety · Women's health philosophy · Personal data experiments</p>
+      </div>
+      <div class="mini">
+        <div class="label">20% · Expert-led</div>
+        <h3>Scientists & doctors</h3>
+        <p>Brenner (NAD+, metabolism, N=1 science) · Gunter when confirmed · Dermatologist partners · Always framed as Ruby interviewing, not experts broadcasting</p>
+      </div>
+      <div class="mini">
+        <div class="label">10% · Product</div>
+        <h3>DrRuby</h3>
+        <p>N=1 intelligence · Healthspan platform · Early access / waitlist · Never leads — always follows the narrative Ruby and experts have built</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Target Audiences</h2>
+    <div class="sub"></div>
+    <div class="two-col">
+      <div class="mini">
+        <div class="label">Ruby IP · English</div>
+        <p>Ages 35–60. Tech founders, investors, longevity enthusiasts, health-conscious high-earners. Motivated by optimizing performance and making better health decisions with less noise.</p>
+      </div>
+      <div class="mini">
+        <div class="label">Ruby IP · Mandarin</div>
+        <p>Ages 30–55. Overseas Chinese women, high-educated professionals, entrepreneurs experiencing burnout. Women starting to notice aging and wanting trustworthy guidance.</p>
+      </div>
+      <div class="mini">
+        <div class="label">DrRuby · TikTok / Douyin</div>
+        <p>Ages 18–35. Skincare-obsessed, acne-prone, early adopters of beauty tech. Responsive to science-backed content and before/after data.</p>
+      </div>
+      <div class="mini">
+        <div class="label">Core Principle</div>
+        <p>Quality over quantity. 5,000 high-intent followers outperform 500,000 casual ones at this stage. We are building an audience that will pay and refer — not just watch.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Weekly Content Output</h2>
+    <div class="sub">LinkedIn and Morning SV are the content engines. Everything else is distribution and repurposing.</div>
+    <table>
+      <thead><tr><th>Platform</th><th>Weekly Output</th><th>Source</th></tr></thead>
+      <tbody>
+        <tr><td>LinkedIn</td><td>3 posts (1 long-form, 2 short)</td><td>Original writing</td></tr>
+        <tr><td>Ruby HealthSpan Lab · YouTube (@rubyhealthspanlab)</td><td>1 episode every 2 weeks</td><td>Original video interviews with scientists &amp; doctors; clips repurposed to all platforms</td></tr>
+        <tr><td>Morning Silicon Valley · Clubhouse</td><td>1 live session / week</td><td>Live audio; key moments clipped to X and LinkedIn</td></tr>
+        <tr><td>X / Twitter</td><td>5 posts</td><td>LinkedIn excerpts + real-time reactions</td></tr>
+        <tr><td>WeChat Video / Xiaohongshu</td><td>2–3 posts</td><td>YouTube/Morning SV clips with Mandarin subtitles</td></tr>
+        <tr><td>TikTok / Douyin</td><td>3–4 videos</td><td>YouTube clips + original short-form</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>Ruby HealthSpan Lab · Channel About Copy</h2>
+    <div class="sub">@rubyhealthspanlab · Use this text verbatim in the YouTube About section</div>
+    <div class="north-star">
+      <p>Ruby HealthSpan Lab is a science-first interview channel hosted by Ruby Sun, founder of DrRuby.ai.<br><br>
+      We talk to the scientists, physicians, and researchers working on women's health, skin biology, metabolism, and longevity — without the hype.<br><br>
+      Guests include Dr. Charles Brenner (NAD+ pioneer) and leading voices in dermatology, functional medicine, and healthy aging.<br><br>
+      New episodes every two weeks. Subscribe for science that respects your intelligence.</p>
+      <div class="attr">CHANNEL DESCRIPTION · Copy → paste into YouTube Studio → About</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Guiding Principles</h2>
+    <div class="sub"></div>
+    <div class="two-col">
+      <div class="mini"><h3>No chasing virality</h3><p>The 90-day goal is consistent brand identity, not traffic spikes. Stability builds trust. One strong piece beats three mediocre ones.</p></div>
+      <div class="mini"><h3>LinkedIn is the anchor</h3><p>Ruby already has 2,375 followers there. This is the highest-leverage platform for investor and partner outreach. Always publish here first.</p></div>
+      <div class="mini"><h3>Ruby holds the mic. Experts answer.</h3><p>Ruby HealthSpan Lab (@rubyhealthspanlab) — Ruby is always the interviewer. Brenner is the first featured scientist, not the anchor of the brand. Narrative ownership stays with Ruby regardless of who's on screen.</p></div>
+      <div class="mini"><h3>Keep the two tracks distinct</h3><p>Ruby IP = ideas, philosophy, founder journey. DrRuby = product, technology, skin data. Never conflate them in the same post.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PILLARS ═══ -->
+<div class="tab-content" id="pillars">
+
+  <div class="card">
+    <h2>Four Content Pillars</h2>
+    <div class="sub">Every piece of content maps to one of these. If it doesn't, don't publish it.</div>
+    <div class="two-col">
+      <div class="mini">
+        <div class="label">Pillar 01</div>
+        <h3>Science vs. Hype</h3>
+        <p>Ruby debunks wellness myths using scientific evidence. Experts (Brenner, Gunter, dermatologists) are sources — Ruby is the narrator. "Ruby asks what science actually knows. Then we tell you." This is DrRuby's core differentiator.</p>
+      </div>
+      <div class="mini">
+        <div class="label">Pillar 02</div>
+        <h3>The Founder's Reality</h3>
+        <p>Four companies, two exits, building with world-class scientists. The authentic, unpolished story of what it actually takes — not the highlight reel.</p>
+      </div>
+      <div class="mini">
+        <div class="label">Pillar 03</div>
+        <h3>Gift of Time</h3>
+        <p>"I don't help you spend more time managing your health. I help you get that time back." Ruby's life philosophy — and DrRuby's product promise.</p>
+      </div>
+      <div class="mini">
+        <div class="label">Pillar 04</div>
+        <h3>The Cross-border Creator</h3>
+        <p>Artist + founder + investor. Chinese-American. Silicon Valley insider. Her multidimensional identity is rare in healthtech — lean into it, don't hide it.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Content Voice</h2>
+    <div class="sub">How Ruby sounds across all platforms</div>
+    <div class="three-col">
+      <div class="mini"><h3>Direct</h3><p>No hedging, no vague wellness language. Say what you mean. "This supplement has no evidence for your goal" — not "results may vary."</p></div>
+      <div class="mini"><h3>Evidence-first</h3><p>Every claim is defensible. If Brenner wouldn't sign off on it, don't say it. Credibility is the product.</p></div>
+      <div class="mini"><h3>Human</h3><p>You're an artist, a founder, a person. Not a brand. Share the real moments — the hard decisions, the surprising conversations, the self-doubt.</p></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Platform Voice Adjustments</h2>
+    <div class="sub"></div>
+    <table>
+      <thead><tr><th>Platform</th><th>Tone</th><th>Format</th></tr></thead>
+      <tbody>
+        <tr><td>LinkedIn</td><td>Authoritative, thoughtful, founder-to-founder</td><td>Long-form essays + punchy 3-line takes</td></tr>
+        <tr><td>Ruby HealthSpan Lab · YouTube</td><td>Curious, evidence-first, respectful of audience intelligence</td><td>Scientist/doctor video interviews (30–45 min) + 5-min highlight clips</td></tr>
+        <tr><td>Morning Silicon Valley · Clubhouse</td><td>Warm, conversational, community-building</td><td>Live audio; 1 clear takeaway per session</td></tr>
+        <tr><td>X</td><td>Sharp, opinionated, fast</td><td>One-liners + threads</td></tr>
+        <tr><td>WeChat / Xiaohongshu</td><td>Personal, emotional, first-person</td><td>Short video + photo essays</td></tr>
+        <tr><td>TikTok / Douyin</td><td>Punchy, visual, product-forward</td><td>60–90 sec, hook in 3 sec</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ═══ PHASE 1 ═══ -->
+<div class="tab-content" id="phase1">
+  <div class="phase-badge">Month 1 · August · Launch &amp; Credibility</div>
+
+  <div class="card">
+    <h2>Objective</h2>
+    <div class="sub">Establish Ruby's presence across all platforms. Publish flag content that defines who she is and what DrRuby stands for. Make the first impression count.</div>
+    <div class="two-col">
+      <div class="mini"><div class="label">Theme 1</div><h3>Origin story</h3><p>"Who I am, what I'm building, and why" — the four-company journey in Ruby's own words.</p></div>
+      <div class="mini"><div class="label">Theme 2</div><h3>Problem framing</h3><p>"Why the wellness industry is making you sicker, poorer, and more anxious."</p></div>
+      <div class="mini"><div class="label">Theme 3</div><h3>Science-first</h3><p>Skin as a biological signal. No product pitch — just the science, explained by someone who works with real scientists.</p></div>
+      <div class="mini"><div class="label">Theme 4</div><h3>Founder reality</h3><p>Authentic behind-the-scenes moments. The hard decisions. The surprising conversations.</p></div>
+    </div>
+  </div>
+
+  <div class="platform">
+    <div class="platform-head">
+      <div class="p-icon" style="background:#0077B5">in</div>
+      <div><h3>LinkedIn</h3><span class="lang">English · 3x/week · PRIMARY PLATFORM</span></div>
+    </div>
+    <ul>
+      <li><strong>Week 1:</strong> Long-form — "Why I'm not building a wellness app" (sets the anti-engagement positioning) · <em>Same day: pin Brenner announcement post — this is the Stage 1 distribution asset</em></li>
+      <li><strong>Week 2:</strong> Long-form — "I asked a world-class biochemist to review my supplement stack. Here's what he said."</li>
+      <li><strong>Week 3:</strong> Long-form — "Four companies in. Here's what I know about building something that actually matters."</li>
+      <li><strong>Week 4:</strong> Long-form — "What skin data can tell you that your doctor can't"</li>
+      <li>Short posts (2x/week): Quotes from Brenner conversations · Science facts · Founder observations</li>
+    </ul>
+    <div class="highlight">⚡ Week 1: Two posts go live same day — (1) Ruby's founder post leads, (2) Brenner announcement follows. Ruby's voice is first. Brenner's name gets the clicks. Both are needed.</div>
+  </div>
+
+  <div class="platform">
+    <div class="platform-head">
+      <div class="p-icon" style="background:#FF0000">▶</div>
+      <div><h3>Ruby HealthSpan Lab · YouTube</h3><span class="lang">@rubyhealthspanlab · English · Bi-weekly</span></div>
+    </div>
+    <ul>
+      <li><strong>Episode 1 (Week 2):</strong> Ruby solo — "Why I'm building DrRuby: the science, the mission, the team" · Establishes Ruby as the host before any guest appears</li>
+      <li><strong>Episode 2 (Week 4):</strong> Ruby interviews Brenner — "I asked the world's leading NAD+ scientist what women get wrong about aging" · Ruby frames every question. Brenner answers. Pull 2 clips max.</li>
+    </ul>
+    <div class="highlight">📌 Format rule for every episode: Ruby opens, Ruby closes, Ruby asks. Guest never holds the camera alone. Pull clips of Brenner answering, not monologuing.</div>
+  </div>
+
+  <div class="two-col">
+    <div class="platform">
+      <div class="platform-head">
+        <div class="p-icon" style="background:#000">𝕏</div>
+        <div><h3>X / Twitter</h3><span class="lang">English · 5x/week</span></div>
+      </div>
+      <ul>
+        <li>Opinion thread (1x/week): "Why longitudinal skin tracking beats a single derm visit"</li>
+        <li>Short takes (2x/week): "Biomarkers don't lie. Symptoms do."</li>
+        <li>Research reactions (2x/week): Share studies with one-line commentary</li>
+      </ul>
+    </div>
+    <div class="platform">
+      <div class="platform-head">
+        <div class="p-icon" style="background:#FF0000">▶</div>
+        <div><h3>YouTube</h3><span class="lang">English · Bi-weekly</span></div>
+      </div>
+      <ul>
+        <li><strong>Week 1:</strong> "Why I'm Building an AI Health Company" (10–15 min)</li>
+        <li><strong>Week 3:</strong> "Your Skin Knows More Than Your Doctor" (science-first, no product pitch)</li>
+      </ul>
+      <div class="highlight">Format: End every video with subscribe + DrRuby waitlist CTA</div>
+    </div>
+  </div>
+
+  <div class="platform">
+    <div class="platform-head">
+      <div class="p-icon" style="background:#07C160">📱</div>
+      <div><h3>WeChat Video / Xiaohongshu</h3><span class="lang">Mandarin · 2–3x/week</span></div>
+    </div>
+    <ul>
+      <li><strong>Week 1:</strong> Ruby self-introduction in Mandarin — the full journey from Kingsoft to DrRuby</li>
+      <li><strong>Week 2:</strong> "为什么我不做一个健康 app" — personal story, emotionally resonant</li>
+      <li><strong>Week 3:</strong> YouTube video repurposed with Mandarin subtitles</li>
+      <li><strong>Week 4:</strong> "创业者的皮肤在压力下会发生什么" — authentic, relatable</li>
+    </ul>
+  </div>
+
+  <div class="platform">
+    <div class="platform-head">
+      <div class="p-icon" style="background:#010101">♪</div>
+      <div><h3>TikTok / Douyin</h3><span class="lang">EN + CN · 3–4x/week · DrRuby track</span></div>
+    </div>
+    <table>
+      <thead><tr><th>Content Type</th><th>Example</th><th>CTA</th></tr></thead>
+      <tbody>
+        <tr><td>Skin science</td><td>"You've never seen your pores this close"</td><td>Join waitlist at drruby.ai</td></tr>
+        <tr><td>Founder story</td><td>"We're building a skin intelligence platform. Here's why."</td><td>Link in bio</td></tr>
+        <tr><td>Intrigue</td><td>"What if your phone could track your skin like a scientist would?"</td><td>Waitlist signup</td></tr>
+        <tr><td>Douyin (CN)</td><td>"用AI追踪你的皮肤，就像科学家一样 — 我们在做这个"</td><td>Comment with email</td></tr>
+      </tbody>
+    </table>
+    <div class="highlight">⚡ Every TikTok/Douyin post ends with a waitlist CTA. Start collecting emails from Day 1.</div>
+  </div>
+</div>
+
+<!-- ═══ PHASE 2 ═══ -->
+<div class="tab-content" id="phase2">
+  <div class="phase-badge">Month 2 · September · Science &amp; Solution</div>
+
+  <div class="card">
+    <h2>Objective</h2>
+    <div class="sub">Build consistent rhythm. Deepen the DrRuby.ai product narrative. Make "Ruby = science-first health intelligence" stick in the audience's mind.</div>
+    <div class="two-col">
+      <div class="mini"><div class="label">Theme 1</div><h3>Ruby's values & philosophy</h3><p>"Gift of time" — less optimization, more living. The anti-wellness-obsession stance.</p></div>
+      <div class="mini"><div class="label">Theme 2</div><h3>DrRuby product story</h3><p>Why skin? How the behavioral intelligence layer works. What "worried well" means.</p></div>
+      <div class="mini"><div class="label">Theme 3</div><h3>Early tester stories</h3><p>If available: real user data, real conversations. Show the building process transparently.</p></div>
+      <div class="mini"><div class="label">Theme 4</div><h3>Longevity science</h3><p>Biomarkers, personalized medicine, what the research actually says vs. what's being sold.</p></div>
+    </div>
+  </div>
+
+  <div class="platform">
+    <div class="platform-head">
+      <div class="p-icon" style="background:#0077B5">in</div>
+      <div><h3>LinkedIn</h3><span class="lang">English · 3x/week</span></div>
+    </div>
+    <ul>
+      <li><strong>Week 5:</strong> "I spent 30 days tracking my skin. Here's what the data actually showed."</li>
+      <li><strong>Week 6:</strong> "We rejected an investor who wanted us to optimize for DAU. Here's why."</li>
+      <li><strong>Week 7:</strong> "The 'worried well' problem — why the most anxious health consumers are being exploited"</li>
+      <li><strong>Week 8:</strong> "What I learned building four companies that applies to health technology"</li>
+      <li>Short posts: Brenner quotes · Data observations · Founder decisions</li>
+    </ul>
+  </div>
+
+  <div class="platform">
+    <div class="platform-head">
+      <div class="p-icon" style="background:#FF0000">▶</div>
+      <div><h3>Ruby HealthSpan Lab · YouTube</h3><span class="lang">@rubyhealthspanlab · English · Bi-weekly</span></div>
+    </div>
+    <ul>
+      <li><strong>Episode 3 (Week 6):</strong> "What is Longitudinal Health Tracking?" — introduces n=1 framework + Brenner collaboration</li>
+      <li><strong>Episode 4 (Week 8):</strong> Invite a second scientist or physician — biomarkers, wearable data, the future of personalized medicine</li>
+    </ul>
+  </div>
+
+  <div class="two-col">
+    <div class="platform">
+      <div class="platform-head">
+        <div class="p-icon" style="background:#000">𝕏</div>
+        <div><h3>X / Twitter</h3><span class="lang">English · 5x/week</span></div>
+      </div>
+      <ul>
+        <li>Begin @-ing scientists — comment on their research with informed takes</li>
+        <li>Thread: "Here's why we built behavioral classification into DrRuby"</li>
+        <li>Personal experiment updates: "30 days of skin tracking — what I found"</li>
+        <li>Engage with dermatologists, healthtech founders, longevity researchers</li>
+      </ul>
+    </div>
+    <div class="platform">
+      <div class="platform-head">
+        <div class="p-icon" style="background:#FF0000">▶</div>
+        <div><h3>YouTube</h3><span class="lang">English · Bi-weekly</span></div>
+      </div>
+      <ul>
+        <li><strong>Week 5:</strong> "The Business of Longevity: What Most People Get Wrong"</li>
+        <li><strong>Week 7:</strong> "30 Days of Skin Data — What I Learned About My Own Health"</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="platform">
+    <div class="platform-head">
+      <div class="p-icon" style="background:#07C160">📱</div>
+      <div><h3>WeChat Video / Xiaohongshu</h3><span class="lang">Mandarin · 2–3x/week</span></div>
+    </div>
+    <ul>
+      <li>"长寿不是富人的专利" — longevity is accessible</li>
+      <li>"数据是最诚实的医生" — data vs. doctor's opinion</li>
+      <li>"压力如何悄悄进入身体" — personal, emotional content</li>
+      <li>YouTube repurposed with Mandarin subtitles</li>
+    </ul>
+  </div>
+
+  <div class="platform">
+    <div class="platform-head">
+      <div class="p-icon" style="background:#010101">♪</div>
+      <div><h3>TikTok / Douyin</h3><span class="lang">EN + CN · 3–4x/week</span></div>
+    </div>
+    <ul>
+      <li>Product demo preview — visual impact, show what the skin data looks like</li>
+      <li>"Why I stopped trusting annual checkups" — opinion-driven, invites discussion</li>
+      <li>Acne tracking series: Part 2 — drives return viewers</li>
+      <li>Douyin: recruit 1–2 real users to film their own experience (UGC)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══ PHASE 3 ═══ -->
+<div class="tab-content" id="phase3">
+  <div class="phase-badge">Month 3 · October · People &amp; Movement</div>
+
+  <div class="card">
+    <h2>Objective</h2>
+    <div class="sub">Media appearances, scientist interview series, speaking, and community. Use third-party credibility to attract collaborators, investors, and high-value early members.</div>
+    <div class="two-col">
+      <div class="mini"><div class="label">Theme 1</div><h3>#RubyScienceSeries launch</h3><p>Ruby hosts a rotating series of scientists. Brenner is Episode 1 (the highest-authority launch). Subsequent guests broaden beyond any one person. Identity: "Ruby talks to scientists" — not "Brenner's platform."</p></div>
+      <div class="mini"><div class="label">Theme 2</div><h3>Media outreach</h3><p>Pitch to TechCrunch, Forbes, Well+Good, WSJ Health. The science-first angle is differentiated.</p></div>
+      <div class="mini"><div class="label">Theme 3</div><h3>Community event</h3><p>One small Zoom (20–30 people), Ruby hosts, Brenner guests. Converts followers into believers.</p></div>
+      <div class="mini"><div class="label">Theme 4</div><h3>DrRuby early access</h3><p>LinkedIn waitlist announcement — Ruby personally reviews first applications.</p></div>
+    </div>
+  </div>
+
+  <div class="platform">
+    <div class="platform-head">
+      <div class="p-icon" style="background:#FF0000">▶</div>
+      <div><h3>Ruby HealthSpan Lab · YouTube · #RubyScienceSeries</h3><span class="lang">@rubyhealthspanlab · English · Anchor episodes</span></div>
+    </div>
+    <table>
+      <thead><tr><th>Week</th><th>Guest</th><th>Topics</th></tr></thead>
+      <tbody>
+        <tr><td>Week 9</td><td>Founding Science Advisor Dr. Charles Brenner</td><td>NAD+ and skin aging · n=1 testing · what anti-aging hype gets wrong</td></tr>
+        <tr><td>Week 11</td><td>Dr. Jenny Liu (target)</td><td>Dermatology + AI · evidence-based skincare · what patients actually need</td></tr>
+        <tr><td>Week 13</td><td>Second scientist TBD</td><td>Biomarkers · wearable data · the future of personalized medicine</td></tr>
+      </tbody>
+    </table>
+    <div class="highlight">Format: 30–45 min full episode. Clip 5–10 min highlight reel for all other platforms.</div>
+  </div>
+
+  <div class="platform">
+    <div class="platform-head">
+      <div class="p-icon" style="background:#0077B5">in</div>
+      <div><h3>LinkedIn</h3><span class="lang">English · Expansion content</span></div>
+    </div>
+    <ul>
+      <li><strong>Week 9:</strong> "We're opening DrRuby to our first members. Here's who we're looking for." (waitlist)</li>
+      <li><strong>Week 10:</strong> Post-Brenner interview: "Three things a world-class scientist said that changed how I think about health"</li>
+      <li><strong>Week 11:</strong> If media coverage: share + add context. Let the coverage speak, add one paragraph.</li>
+      <li><strong>Week 12–13:</strong> "90 days of building in public — what I learned, what I'd do differently"</li>
+    </ul>
+  </div>
+
+  <div class="two-col">
+    <div class="platform">
+      <div class="platform-head">
+        <div class="p-icon" style="background:#000">𝕏</div>
+        <div><h3>X / Twitter</h3><span class="lang">English</span></div>
+      </div>
+      <ul>
+        <li>Thread summarizing key takeaways on interview launch day</li>
+        <li>Tag guests — enables organic reposting into science circles</li>
+        <li>Use consistent hashtag: #RubyScienceSeries</li>
+        <li>Engage with any scientist/journalist who reposts</li>
+      </ul>
+    </div>
+    <div class="platform">
+      <div class="platform-head">
+        <div class="p-icon" style="background:#FF0000">▶</div>
+        <div><h3>Ruby HealthSpan Lab · YouTube</h3><span class="lang">@rubyhealthspanlab · English · Interview format</span></div>
+      </div>
+      <ul>
+        <li>Full Brenner interview (30–45 min)</li>
+        <li>Clip: "A leading biochemist on what NAD+ actually does" (5 min)</li>
+        <li>Clip: "The supplement industry's biggest lie" (3 min)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="platform">
+    <div class="platform-head">
+      <div class="p-icon" style="background:#07C160">📱</div>
+      <div><h3>WeChat Video / Xiaohongshu</h3><span class="lang">Mandarin</span></div>
+    </div>
+    <ul>
+      <li>Interview clipped to 2–3 min with Mandarin subtitles</li>
+      <li>Quote cards from interview highlights</li>
+      <li>"这位科学家说，你的皮肤比你想象的更聪明"</li>
+      <li>Ruby's personal reflections post-interview — emotional, first-person</li>
+    </ul>
+  </div>
+
+  <div class="platform">
+    <div class="platform-head">
+      <div class="p-icon" style="background:#010101">♪</div>
+      <div><h3>TikTok / Douyin</h3><span class="lang">EN + CN · Hard waitlist push</span></div>
+    </div>
+    <ul>
+      <li>30–60 sec clip of the most striking moment from the Brenner interview</li>
+      <li>"A leading biochemist told me this about skin aging" — strongest content of the 90 days</li>
+      <li>Douyin: Mandarin voice-over version of interview clips</li>
+      <li>Product launch runway: "We're almost ready. Get on the waitlist." — hardest CTA of the 90 days</li>
+    </ul>
+    <div class="highlight">⚡ Phase 3 goal: Convert 90-day audience into DrRuby early members. Every post points to the waitlist.</div>
+  </div>
+</div>
+
+<!-- ═══ TOPIC BANK ═══ -->
+<div class="tab-content" id="topics">
+  <div class="card">
+    <h2>Content Topic Bank</h2>
+    <div class="sub">Ready-to-use ideas. Pick one, write it, publish it. Organized by content pillar.</div>
+  </div>
+
+  <div class="slabel">Pillar 01 · Science vs. Hype</div>
+  <div class="three-col" style="margin-bottom:20px">
+    <div class="topic"><div class="icon">🔬</div><h4>The bio-age test scam</h4><p>I spent $300 on a biological age test. A biochemist told me I learned almost nothing from the data.</p><div class="ex">LinkedIn long-form + Morning SV segment</div></div>
+    <div class="topic"><div class="icon">💊</div><h4>Your supplement stack</h4><p>The average "health-conscious" person takes 6+ supplements. Dr. Brenner reviewed mine. Here's what he said.</p><div class="ex">LinkedIn + X thread</div></div>
+    <div class="topic"><div class="icon">🧬</div><h4>What NAD+ actually does</h4><p>Explained by the scientist who discovered the pathway. Not what the supplement companies say.</p><div class="ex">Ruby HealthSpan Lab clip</div></div>
+    <div class="topic"><div class="icon">📊</div><h4>Collagen drinks</h4><p>The science is more complicated than the marketing. Here's what the evidence actually says.</p><div class="ex">LinkedIn + Xiaohongshu</div></div>
+    <div class="topic"><div class="icon">🏥</div><h4>What your dermatologist can't see</h4><p>A single office visit vs. 90 days of longitudinal skin data. The information gap is enormous.</p><div class="ex">YouTube + TikTok</div></div>
+    <div class="topic"><div class="icon">⚗️</div><h4>GLP-1 and skin</h4><p>Weight loss drugs are changing body composition. What does that mean for skin aging? The science is early but real.</p><div class="ex">LinkedIn + Ruby HealthSpan Lab</div></div>
+  </div>
+
+  <div class="slabel">Pillar 02 · The Founder's Reality</div>
+  <div class="three-col" style="margin-bottom:20px">
+    <div class="topic"><div class="icon">🏗️</div><h4>The investor we said no to</h4><p>We rejected an investor who wanted DAU as a primary metric. This is why — and what we optimize for instead.</p><div class="ex">LinkedIn</div></div>
+    <div class="topic"><div class="icon">🤝</div><h4>Finding Brenner</h4><p>How do you convince a world-class biochemist to advise your startup? The honest story.</p><div class="ex">LinkedIn + Ruby HealthSpan Lab</div></div>
+    <div class="topic"><div class="icon">🔄</div><h4>Four companies in</h4><p>From Kingsoft to Beijing software to New York finance to Silicon Valley health AI. What each chapter taught me.</p><div class="ex">LinkedIn + WeChat</div></div>
+    <div class="topic"><div class="icon">🎨</div><h4>Art and product design</h4><p>Why I make ceramics while building a health AI company. It's not a hobby — it's a thinking tool.</p><div class="ex">LinkedIn + Instagram</div></div>
+    <div class="topic"><div class="icon">💰</div><h4>The "worried well" trap</h4><p>The most anxious health consumers are also the most profitable customers. We're trying not to exploit them.</p><div class="ex">LinkedIn + Ruby HealthSpan Lab</div></div>
+    <div class="topic"><div class="icon">📍</div><h4>China to Silicon Valley</h4><p>What I understand about health and business that most American founders don't — and vice versa.</p><div class="ex">LinkedIn + WeChat</div></div>
+  </div>
+
+  <div class="slabel">Pillar 03 · Gift of Time</div>
+  <div class="three-col" style="margin-bottom:20px">
+    <div class="topic"><div class="icon">⏱️</div><h4>Stop tracking these 5 things</h4><p>Your health won't get worse. Your life will get better. A science-backed permission slip to simplify.</p><div class="ex">LinkedIn + TikTok</div></div>
+    <div class="topic"><div class="icon">📱</div><h4>The app that gave me time back</h4><p>DrRuby's Gift of Time dashboard — we quantify what we save you, not just what we optimize.</p><div class="ex">LinkedIn + YouTube</div></div>
+    <div class="topic"><div class="icon">🎯</div><h4>One metric that matters</h4><p>We asked Brenner: if you could only track one thing about your health, what would it be? His answer surprised us.</p><div class="ex">Ruby HealthSpan Lab + X thread</div></div>
+  </div>
+
+  <div class="slabel">Pillar 04 · Cross-border Creator</div>
+  <div class="three-col" style="margin-bottom:20px">
+    <div class="topic"><div class="icon">🌏</div><h4>Two cultures, one health view</h4><p>What Chinese traditional wisdom gets right that Western medicine ignores — and vice versa.</p><div class="ex">WeChat + Xiaohongshu</div></div>
+    <div class="topic"><div class="icon">👩‍🎨</div><h4>The artist and the algorithm</h4><p>I spend my weekends making ceramics. It makes me a better founder. Here's why creative practice is a competitive advantage.</p><div class="ex">LinkedIn + Instagram</div></div>
+    <div class="topic"><div class="icon">🇺🇸🇨🇳</div><h4>Healthtech East and West</h4><p>The Silicon Valley approach to longevity vs. the Chinese approach. What each misses.</p><div class="ex">Morning SV + WeChat</div></div>
+  </div>
+</div>
+
+<!-- ═══ MEDIA ARTICLES ═══ -->
+<div class="tab-content" id="media">
+  <div class="card">
+    <h2>Media Articles — 3-Month Press Titles</h2>
+    <div class="sub">Article titles to pitch to media. Each article distributes across: LinkedIn · X · WeChat · Xiaohongshu · Reddit. Interview clips from Ruby HealthSpan Lab rotate continuously across TikTok / Douyin · Reels · YouTube Shorts.</div>
+  </div>
+
+  <div class="slabel">Month 1 · Launch &amp; Credibility — The Problem</div>
+  <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:28px">
+    <div class="card" style="padding:18px 22px">
+      <div style="font-size:0.65rem;font-weight:700;color:#C04535;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px">Article 01 — Strongest</div>
+      <div style="font-size:1rem;font-weight:700;color:#111;margin-bottom:6px">They Took the Science. We're Rebuilding the Purpose.</div>
+      <div style="font-size:0.85rem;color:#666;font-style:italic">After watching longevity science become an anxiety industry, Founding Science Advisor Charles Brenner joined DrRuby to build something different.</div>
+    </div>
+    <div class="card" style="padding:18px 22px">
+      <div style="font-size:0.65rem;font-weight:700;color:#C04535;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px">Article 02</div>
+      <div style="font-size:1rem;font-weight:700;color:#111;margin-bottom:6px">How Aging Science Became an Anxiety Machine</div>
+      <div style="font-size:0.85rem;color:#666;font-style:italic">And why Founding Science Advisor Charles Brenner believes the next generation of health technology should help people live more — and track less.</div>
+    </div>
+    <div class="card" style="padding:18px 22px">
+      <div style="font-size:0.65rem;font-weight:700;color:#C04535;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px">Article 03</div>
+      <div style="font-size:1rem;font-weight:700;color:#111;margin-bottom:6px">The Longevity Industry Built an Anxiety Machine. We're Building an Exit.</div>
+      <div style="font-size:0.85rem;color:#666;font-style:italic">Not Anxious. Just Healthy.</div>
+    </div>
+    <div class="card" style="padding:18px 22px">
+      <div style="font-size:0.65rem;font-weight:700;color:#C04535;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px">Article 04</div>
+      <div style="font-size:1rem;font-weight:700;color:#111">The scientist behind NAD+ research and a serial entrepreneur are building a different future for healthspan.</div>
+    </div>
+    <div class="card" style="padding:18px 22px">
+      <div style="font-size:0.65rem;font-weight:700;color:#C04535;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px">Article 05</div>
+      <div style="font-size:1rem;font-weight:700;color:#111">The Longevity Industry Built an Anxiety Machine. DrRuby Wants to Turn It Off.</div>
+    </div>
+  </div>
+
+  <div class="slabel">Month 2 · The Science &amp; The Solution — N=1 Intelligence</div>
+  <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:28px">
+    <div class="card" style="padding:18px 22px">
+      <div style="font-size:0.65rem;font-weight:700;color:#C04535;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px">Article 01</div>
+      <div style="font-size:1rem;font-weight:700;color:#111;margin-bottom:6px">Medicine Was Built Around Averages. Your Body Isn't Average.</div>
+      <div style="font-size:0.85rem;color:#666;font-style:italic">How DrRuby's N=1 intelligence model is replacing population medicine with something that actually knows you.</div>
+    </div>
+    <div class="card" style="padding:18px 22px">
+      <div style="font-size:0.65rem;font-weight:700;color:#C04535;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px">Article 02</div>
+      <div style="font-size:1rem;font-weight:700;color:#111;margin-bottom:6px">The Health App That Considers It a Victory When You Stop Opening It</div>
+      <div style="font-size:0.85rem;color:#666;font-style:italic">Inside DrRuby's radical design premise: the less you need us, the better we're doing.</div>
+    </div>
+    <div class="card" style="padding:18px 22px">
+      <div style="font-size:0.65rem;font-weight:700;color:#C04535;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px">Article 03</div>
+      <div style="font-size:1rem;font-weight:700;color:#111;margin-bottom:6px">Your Supplement Stack Works for Someone. Just Not Necessarily You.</div>
+      <div style="font-size:0.85rem;color:#666;font-style:italic">The science of individual biological response — and why N=1 data changes everything about health advice.</div>
+    </div>
+    <div class="card" style="padding:18px 22px">
+      <div style="font-size:0.65rem;font-weight:700;color:#C04535;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px">Article 04</div>
+      <div style="font-size:1rem;font-weight:700;color:#111;margin-bottom:6px">What If Your Health App Asked What You Want From Life Before Asking About Your Labs?</div>
+      <div style="font-size:0.85rem;color:#666;font-style:italic">DrRuby's goal-first onboarding is a fundamental rethink of how health technology begins.</div>
+    </div>
+    <div class="card" style="padding:18px 22px">
+      <div style="font-size:0.65rem;font-weight:700;color:#C04535;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px">Article 05</div>
+      <div style="font-size:1rem;font-weight:700;color:#111;margin-bottom:6px">The Next Frontier in Aging Science Isn't a Molecule. It's You.</div>
+      <div style="font-size:0.85rem;color:#666;font-style:italic">Founding Science Advisor Dr. Charles Brenner on why N=1 longitudinal data is the missing variable in consumer health — and what DrRuby is doing about it.</div>
+    </div>
+  </div>
+
+  <div class="slabel">Month 3 · The People &amp; The Movement — Women's Healthspan</div>
+  <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:28px">
+    <div class="card" style="padding:18px 22px">
+      <div style="font-size:0.65rem;font-weight:700;color:#C04535;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px">Article 01</div>
+      <div style="font-size:1rem;font-weight:700;color:#111;margin-bottom:6px">She Sold Two Companies. Then Menopause Arrived — and None of Her Health Tools Worked.</div>
+      <div style="font-size:0.85rem;color:#666;font-style:italic">Ruby Sun on building the platform she couldn't find, and why women's healthspan needs a completely different approach.</div>
+    </div>
+    <div class="card" style="padding:18px 22px">
+      <div style="font-size:0.65rem;font-weight:700;color:#C04535;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px">Article 02</div>
+      <div style="font-size:1rem;font-weight:700;color:#111;margin-bottom:6px">Silicon Valley's Most Contrarian Health Startup Is Trying to Make You Calm.</div>
+      <div style="font-size:0.85rem;color:#666;font-style:italic">How DrRuby is betting that the future of health technology looks nothing like the anxiety machine it's replacing.</div>
+    </div>
+    <div class="card" style="padding:18px 22px">
+      <div style="font-size:0.65rem;font-weight:700;color:#C04535;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px">Article 03</div>
+      <div style="font-size:1rem;font-weight:700;color:#111;margin-bottom:6px">The Longevity Industry Forgot About Women. DrRuby Is Fixing That.</div>
+      <div style="font-size:0.85rem;color:#666;font-style:italic">Why women's healthspan requires individualized intelligence — not recycled male-default population data.</div>
+    </div>
+    <div class="card" style="padding:18px 22px">
+      <div style="font-size:0.65rem;font-weight:700;color:#C04535;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px">Article 04</div>
+      <div style="font-size:1rem;font-weight:700;color:#111;margin-bottom:6px">I Stopped Optimizing. That's When My Health Improved.</div>
+      <div style="font-size:0.85rem;color:#666;font-style:italic">Ruby Sun on Sjögren's syndrome, menopause, and why closing the app was the healthiest decision she ever made.</div>
+    </div>
+    <div class="card" style="padding:18px 22px">
+      <div style="font-size:0.65rem;font-weight:700;color:#C04535;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px">Article 05</div>
+      <div style="font-size:1rem;font-weight:700;color:#111;margin-bottom:6px">A Painter, a Scientist, and a Serial Entrepreneur Walk Into a Health Startup.</div>
+      <div style="font-size:0.85rem;color:#666;font-style:italic">The unlikely story behind DrRuby — and what it means to build a company whose goal is to make itself unnecessary.</div>
+    </div>
+  </div>
+
+  <div class="card" style="background:#FFF5F4;border-left:4px solid #C04535;padding:18px 22px">
+    <div style="font-size:0.75rem;font-weight:700;color:#C04535;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">Distribution Rule — Every Article</div>
+    <div style="font-size:0.87rem;color:#444;line-height:1.7">
+      Press pitch → LinkedIn long-form → X thread → WeChat article → Xiaohongshu → Reddit (r/longevity, r/Biohackers)<br>
+      Interview recordings (Ruby HealthSpan Lab) → YouTube full episode → 6–8 short clips → TikTok / Douyin / Reels / YouTube Shorts / Xiaohongshu<br>
+      <strong>One asset. Six+ platforms. Clips rotate continuously throughout all 3 months.</strong>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ METRICS ═══ -->
+<div class="tab-content" id="metrics">
+  <div class="card">
+    <h2>90-Day Milestones</h2>
+    <div class="sub"></div>
+    <table>
+      <thead><tr><th>Checkpoint</th><th>Target</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Early August</strong><br><span style="font-size:0.7rem;color:#888">Month 1 begins</span></td><td>All social accounts activated and unified. Media contact list 100+ built. First LinkedIn long-form published. Launch Day posts live (Ruby first, Brenner announcement same day). Media kit assembled and ready.</td></tr>
+        <tr><td><strong>End of August</strong><br><span style="font-size:0.7rem;color:#888">Month 1 complete</span></td><td>3 press pitches sent, at least 1 reply. 3 video clips published. Ruby HealthSpan Lab Ep. 1 live on @rubyhealthspanlab. LinkedIn: 3,500+ followers. Waitlist: 300+ signups. Media embargo outreach underway.</td></tr>
+        <tr><td><strong>September</strong><br><span style="font-size:0.7rem;color:#888">Launch month</span></td><td><strong>DrRuby product launches.</strong> Ep. 2 live. At least 2 press articles published. Women's media pitch batch sent (Well+Good, Byrdie, Refinery29). Chinese platform content running. LinkedIn: 4,500+ followers. WeChat: 1,000+ followers.</td></tr>
+        <tr><td><strong>October</strong><br><span style="font-size:0.7rem;color:#888">Month 3 complete</span></td><td>Ruby's personal story: at least 1 major press feature. Ep. 3 live on @rubyhealthspanlab. 90-day media results compiled. LinkedIn: 5,000+ followers. DrRuby early members: 100+. Sustained media coverage continues through November.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>Platform Growth Targets</h2>
+    <div class="sub"></div>
+    <div class="four-col">
+      <div class="metric"><div class="val">5,000</div><div class="lbl">LinkedIn followers<br>(from 2,375)</div></div>
+      <div class="metric"><div class="val">500+</div><div class="lbl">Ruby HealthSpan Lab<br>YouTube subscribers</div></div>
+      <div class="metric"><div class="val">1,000+</div><div class="lbl">WeChat Video followers</div></div>
+      <div class="metric"><div class="val">300+</div><div class="lbl">DrRuby waitlist signups</div></div>
+    </div>
+    <div class="four-col" style="margin-top:12px">
+      <div class="metric"><div class="val">12</div><div class="lbl">LinkedIn long-form posts</div></div>
+      <div class="metric"><div class="val">6</div><div class="lbl">Morning SV episodes</div></div>
+      <div class="metric"><div class="val">3</div><div class="lbl">Scientist interviews</div></div>
+      <div class="metric"><div class="val">1</div><div class="lbl">Media mentions (target)</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>What Success Looks Like at End of October</h2>
+    <div class="sub"></div>
+    <div class="three-col">
+      <div class="mini"><h3>For investors</h3><p>A founder with a clear, consistent point of view, growing professional audience, and world-class scientific advisors visibly engaged with the platform.</p></div>
+      <div class="mini"><h3>For partners</h3><p>A credible platform where "Ruby talks to scientists" is an established identity — making outreach to figures like Gunter and Jenny Liu land differently.</p></div>
+      <div class="mini"><h3>For users</h3><p>A community of early members who joined because they trust Ruby's judgment — not because they saw an ad.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="brand">Ruby Sun · DrRuby.ai · 90-Day IP & Social Media Plan V2</div>
+  <div class="contact">rubysun.life · ruby@drruby.ai</div>
+</div>
+
+<script>
+function show(id, el) {
+  document.querySelectorAll('.tab-content').forEach(e => e.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(e => e.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  el.classList.add('active');
+}
+</script>
+</body>
+</html>
